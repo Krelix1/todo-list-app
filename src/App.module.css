@@ -1,0 +1,109 @@
+.appWrapper{
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom right, #f38787,#bd8ef1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.appWrapperContent {
+  height: 90%;
+  width: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+  background-color: #9C89B8;
+  margin-bottom: 3%;
+  font-size: 30px;
+  color: #F0E6EF;
+  letter-spacing: 4px;
+}
+.list{
+  position: relative;
+  height: 80%;
+  width: 100%;
+  background-color: #F0E6EF;
+}
+.items{
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 50px;
+}
+.items li{
+  text-align: left;
+  height: 90px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 25px;
+  color: #9C89B8;
+  padding: 0 0 15px 15px;
+  border-bottom: 2px solid #9C89B8;
+  }
+.button{
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  height: 55px;
+  width: 55px;
+  border-radius: 50px;
+  border: none;
+  background: #ff6262;
+  z-index: 5;
+}
+@media (max-width: 1450px){
+  .appWrapperContent{
+    width: 40%;
+  }
+  .button{
+    width: 75px;
+    height: 75px;
+    bottom: 10%;
+  }
+}
+@media (max-width: 1080px){
+  .appWrapperContent {
+    height: 80%;
+    width: 70%;
+  }
+}
+
+@media (max-width: 610px) {
+  .appWrapperContent{
+    width: 90%;
+  }
+  .name{
+    font-size: 25px;
+  }
+  .items li{
+    height: 70px;
+    font-size: 20px;
+    color: #9C89B8;
+    padding: 0 0 15px 10px;
+    border-bottom: 1px solid #9C89B8;
+  }
+  .button{
+    width: 55px;
+    height: 55px;
+    bottom: 5%;
+  }
+}
+@media (max-width: 350px) {
+  .appWrapperContent{
+    width: 95%;
+    height: 100%;
+  }
+
+}
