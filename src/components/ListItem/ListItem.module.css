@@ -1,0 +1,95 @@
+.task {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.task:after {
+  bottom: 25px;
+  display: block;
+  position: absolute;
+  left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  width: 0; /*задаём длинну линии до наведения курсора*/
+  height: 1px; /*задаём ширину линии*/
+  background-color: rgba(245, 118, 118, 0.58); /*задаём цвет линии*/
+  content: "";
+  transition: width 0.4s ease-out; /*задаём время анимации*/
+}
+
+.button {
+  width: 100%;
+}
+
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #9C89B8;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.list li {
+  text-align: left;
+  height: 90px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 25px;
+  color: #9C89B8;
+  padding: 0 0 15px 25px;
+  transition: font-weight 0.1s ease-in-out;
+}
+.list li:hover,.list li:focus{
+  font-weight: bold;
+}
+.icon {
+  cursor: pointer;
+  padding: 20px 20px 15px;
+  color: #f57676;
+  font-size: 20px;
+}
+
+.icon:hover ~ .task:after,
+.icon:focus ~ .task:after{
+  width: 70%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+.information {
+  margin: 20px auto 0;
+  padding: 20px;
+  background-color: #9C89B8;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  height: 100px;
+  width: 90%;
+  color: white;
+}
+
+.hidden {
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  height: 0;
+  width: 90%;
+}
+
+@media (max-width: 610px) {
+  .task:after {
+    bottom: 22px;
+  }
+  .icon{
+    font-size: 18px;
+  }
+  .list li {
+    height: 70px;
+    color: #9C89B8;
+    padding: 0 0 15px 10px;
+    font-size: 18px;
+  }
+}

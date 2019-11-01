@@ -1,24 +1,25 @@
-.appWrapper{
+.appWrapper {
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(to bottom right, #f38787,#bd8ef1);
+  background: linear-gradient(to bottom right, #f38787, #bd8ef1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .appWrapperContent {
-  height: 90%;
-  width: 30%;
+  height: 80%;
+  width: 25%;
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
-.name{
+
+.name {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   height: 10%;
   width: 100%;
@@ -27,81 +28,187 @@
   font-size: 30px;
   color: #F0E6EF;
   letter-spacing: 4px;
+  transition: width 1s ease-in-out,
+  color 0.2s ease-in-out 1s;
 }
-.list{
+
+.hideName {
+  color: transparent;
+  width: 0;
+}
+
+
+.list {
   position: relative;
+  padding-bottom: 85px;
   height: 80%;
   width: 100%;
   background-color: #F0E6EF;
+  transition: height 1s ease-in-out 1.4s,
+  padding-bottom 0.2s ease-in-out 2.2s,
+  color 0.2s ease-in-out 2.2s;
 }
-.items{
-  height: 100%;
-  overflow-y: auto;
-  padding-bottom: 50px;
+
+.hideList {
+  color: transparent;
+  padding-bottom: 0;
+  height: 0;
 }
-.items li{
-  text-align: left;
-  height: 90px;
-  width: 90%;
-  margin: 0 auto;
+
+.items {
+  margin: 15px 10px 0 0;
+  height: 95%;
+  overflow-y: scroll;
+
+}
+
+.items::-webkit-scrollbar {
+  width: 4px;
+  background-color: #F0E6EF;
+}
+
+.items::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background: #F0E6EF;
+}
+
+.items::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: #9C89B8;
+}
+
+.button {
+  color: #F0E6EF;
+  font-size: 60px;
+  text-align: center;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  font-size: 25px;
-  color: #9C89B8;
-  padding: 0 0 15px 15px;
-  border-bottom: 2px solid #9C89B8;
-  }
-.button{
-  position: absolute;
-  bottom: 50px;
-  right: 20px;
-  height: 55px;
-  width: 55px;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 50px;
+  bottom: 20px;
+  right: 50px;
   border-radius: 50px;
-  border: none;
-  background: #ff6262;
+  border: 3px solid #fb6c6c;
+  background: #fb6c6c;
   z-index: 5;
+  transition: all 0.2s ease-in-out 2s, background-color 0.2s ease-in-out, color 0.2s ease-in-out, font-weight 0.2s ease-in-out;
 }
-@media (max-width: 1450px){
-  .appWrapperContent{
-    width: 40%;
+
+.itemCreator {
+  margin: 15px auto 0;
+  position: absolute;
+  background-color: #9C89B8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  width: 90%;
+  color: #F0E6EF;
+  padding: 10px;
+  text-align: left;
+  font-size: 20px;
+  top: 0;
+  left: 5%;
+  transition: all 0.5s ease-in-out;
+}
+.inputText{
+  margin: 15px 0 0;
+  width: 80%;
+  height: 80px;
+  overflow-y: auto;
+}
+
+.hideItemCreator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  position: absolute;
+  background-color: #9C89B8;
+  transition: all 0.5s ease-in-out, opacity 0.1s ease-in-out 0.3s;
+  width: 90%;
+  left: 5%;
+  top: 80%;
+  height: 0;
+  opacity: 0;
+}
+
+.button:active {
+  color: #fb6c6c;
+  font-weight: bold;
+  background-color: #F0E6EF;
+}
+
+.hideButton {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+@media (min-width: 2200px) {
+  .appWrapperContent {
+    height: 90%;
+    width: 20%;
   }
-  .button{
+}
+
+@media (max-width: 1450px) {
+  .appWrapperContent {
+    width: 35%;
+  }
+
+  .button {
+    font-size: 50px;
     width: 75px;
-    height: 75px;
-    bottom: 10%;
+    height: 50px;
+    bottom: 20px;
+    right: 50px;
   }
 }
-@media (max-width: 1080px){
+
+@media (max-width: 1080px) {
   .appWrapperContent {
     height: 80%;
-    width: 70%;
+    width: 60%;
+  }
+
+  .button {
+    bottom: 15px;
   }
 }
 
 @media (max-width: 610px) {
-  .appWrapperContent{
+  .list {
+    padding-bottom: 50px;
+  }
+
+  .items {
+    margin: 15px 5px 0 0;
+  }
+
+  .appWrapperContent {
+    justify-content: flex-start;
+    height: 90%;
     width: 90%;
   }
-  .name{
+
+  .name {
     font-size: 25px;
   }
-  .items li{
-    height: 70px;
-    font-size: 20px;
-    color: #9C89B8;
-    padding: 0 0 15px 10px;
-    border-bottom: 1px solid #9C89B8;
-  }
-  .button{
+
+  .button {
     width: 55px;
-    height: 55px;
-    bottom: 5%;
+    height: 35px;
+    bottom: 7px;
+    right: 50px;
   }
 }
+
 @media (max-width: 350px) {
-  .appWrapperContent{
+  .appWrapperContent {
     width: 95%;
     height: 100%;
   }
