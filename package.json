@@ -9,7 +9,8 @@
     "@fortawesome/react-fontawesome": "^0.1.6",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "uuid": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

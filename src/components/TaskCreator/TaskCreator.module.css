@@ -1,0 +1,91 @@
+.itemCreator {
+  margin: 15px auto 0;
+  position: absolute;
+  background-color: #848484;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 50%;
+  width: 90%;
+  color: #F0E6EF;
+  padding: 10px;
+  text-align: left;
+  font-size: 20px;
+  top: 0;
+  left: 5%;
+  transition: all 0.5s ease-in-out;
+}
+
+.inputText {
+  margin: 10px 0 0;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  width: 95%;
+  font-size: 24px;
+  border: 3px solid #b2c375;
+  height: 45px;
+  color: #b2c375;
+  overflow-y: hidden;
+  resize: none;
+  transition: height 0.3s ease-in-out;
+}
+
+.inputText:focus {
+  overflow-y: auto;
+  height: 150px;
+}
+
+.inputDate {
+  width: 95%;
+  color: #848484;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputDate label {
+  color: #F0E6EF;
+}
+
+.hideItemCreator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: absolute;
+  background-color: #848484;
+  transition: all 0.5s ease-in-out, opacity 0.1s ease-in-out 0.1s;
+  padding: 0;
+  width: 90%;
+  left: 5%;
+  top: 80%;
+  height: 0;
+  opacity: 0;
+}
+.taskButton {
+  color: #F0E6EF;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50px;
+  border-radius: 50px;
+  border: 3px solid #b2c375;
+  background: #b2c375;
+  transition: all 0.2s ease-in-out 2s, background-color 0.2s ease-in-out, color 0.2s ease-in-out, font-weight 0.2s ease-in-out;
+}
+
+.taskButton:active {
+  color: #848484;
+  font-weight: bold;
+  background-color: #F0E6EF;
+}
+@media (max-width: 610px) {
+  .inputText  {
+    font-size: 20px;
+  }
+}
