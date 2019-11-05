@@ -1,8 +1,19 @@
-*{
+* {
   box-sizing: border-box;
-  font-family: "Montserrat Light",sans-serif;
+  font-family: "Montserrat Light", sans-serif;
 }
-body{
-  font-family: "Montserrat Light",sans-serif;
+
+body {
+  font-family: "Montserrat Light", sans-serif;
   overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  background: #91b9d6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

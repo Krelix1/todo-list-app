@@ -25,70 +25,108 @@
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: flex-end;
+  height: 90px;
   border-bottom: 2px solid #b2c375;
   width: 90%;
   margin: 0 auto;
 }
 
-.list li {
+.task {
   text-align: left;
-  height: 90px;
-  width: 70%;
+  width:auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   font-size: 25px;
-  color: #222;
-  padding: 0 0 15px 25px;
+  color: #707070;
+  padding: 10px;
+  margin: 0 0 5px 15px;
+  font-family: "Montserrat Regular", sans-serif;
   transition: font-weight 0.1s ease-in-out;
 }
-.list li:hover,.list li:focus{
+
+.task:hover, .task:focus {
   font-weight: bold;
 }
+
 .icon {
   cursor: pointer;
-  padding: 20px 20px 15px;
-  color: #848484;
+  padding: 20px 20px 15px 10px;
   font-size: 20px;
+  color: #848484;
 }
 
 .icon:hover ~ .task:after,
-.icon:focus ~ .task:after{
-  width: 70%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+.icon:focus ~ .task:after {
+  width: 70%;
 }
 
 .information {
   margin: 20px auto 0;
   padding: 20px;
+  font-size: 18px;
   background-color: #b2c375;
   text-align: left;
   transition: all 0.3s ease-in-out;
   opacity: 1;
-  height: 100px;
+  height: auto;
   width: 90%;
   color: white;
 }
-
+.information p{
+  word-break: break-all;
+}
 .hidden {
   margin: 0 auto;
   padding: 0 20px;
   text-align: left;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   opacity: 0;
   height: 0;
   width: 90%;
 }
-
+.date{
+  font-size: 20px;
+  font-family: "Montserrat Medium",sans-serif;
+  transition: all 0.3s ease-in-out ;
+  background-color: #b2c375;
+  height: auto;
+  color: #f0e6ef;
+  width: auto;
+  padding: 10px;
+  margin: 0 auto 15px;
+  border-radius: 15px;
+}
+.time{
+  font-size: 20px;
+  font-family: "Montserrat Medium",sans-serif;
+  background-color: #f0e6ef ;
+  height: auto;
+  color: #b2c375;
+  width: 75px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 15px;
+}
 @media (max-width: 610px) {
   .task:after {
     bottom: 22px;
   }
-  .icon{
+
+  .icon {
     font-size: 18px;
   }
-  .list li {
+  .list{
     height: 70px;
-    padding: 0 0 15px 10px;
+  }
+  .task {
+    height: 40px;
+
+    margin: 0 0 5px 0;
     font-size: 18px;
+  }
+  .date{
+    font-size: 18px;
+    margin: 0 auto 10px;
   }
 }

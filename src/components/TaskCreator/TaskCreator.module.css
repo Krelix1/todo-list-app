@@ -14,19 +14,21 @@
   top: 0;
   left: 5%;
   transition: all 0.5s ease-in-out;
+  visibility: visible;
 }
 
 .inputText {
   margin: 10px 0 0;
-  padding: 5px 10px;
+  padding: 10px 10px;
   background-color: #ffffff;
   width: 95%;
-  font-size: 24px;
+  font-size: 20px;
   border: 3px solid #b2c375;
   height: 45px;
   color: #b2c375;
   overflow-y: hidden;
   resize: none;
+  font-family:"Montserrat Regular",sans-serif;
   transition: height 0.3s ease-in-out;
 }
 
@@ -43,7 +45,10 @@
   align-items: center;
   justify-content: space-between;
 }
-
+.inputDate input{
+  border:3px solid #b2c375 ;
+  background-color: #ffffff;
+}
 .inputDate label {
   color: #F0E6EF;
 }
@@ -62,6 +67,7 @@
   top: 80%;
   height: 0;
   opacity: 0;
+  visibility: hidden;
 }
 .taskButton {
   color: #F0E6EF;
@@ -76,7 +82,7 @@
   border-radius: 50px;
   border: 3px solid #b2c375;
   background: #b2c375;
-  transition: all 0.2s ease-in-out 2s, background-color 0.2s ease-in-out, color 0.2s ease-in-out, font-weight 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out , background 0.2s ease-in-out, color 0.2s ease-in-out, font-weight 0.2s ease-in-out;
 }
 
 .taskButton:active {
@@ -84,8 +90,49 @@
   font-weight: bold;
   background-color: #F0E6EF;
 }
+.button {
+  color: #F0E6EF;
+  font-size: 60px;
+  text-align: center;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 50px;
+  bottom: 20px;
+  right: 50px;
+  border-radius: 50px;
+  border: 3px solid #848484;
+  background: #848484;
+  z-index: 5;
+  transition: all 0.2s ease-in-out 2s, background-color 0.2s ease-in-out, color 0.2s ease-in-out, font-weight 0.2s ease-in-out;
+}
+
+.button:active {
+  color: #848484;
+  font-weight: bold;
+  background-color: #F0E6EF;
+}
+
+.hideButton {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
 @media (max-width: 610px) {
   .inputText  {
     font-size: 20px;
+    padding: 5px 10px;
+  }
+}
+@media (max-width: 350px) {
+  .itemCreator{
+    height: 70%;
+  }
+  .inputDate{
+    font-size: 17px;
   }
 }

@@ -1,21 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import css from './App.module.css';
-import ListItem from "./components/ListItem/ListItem";
 import TaskCreator from "./components/TaskCreator/TaskCreator";
+import List from "./components/List/List";
 
 const App = () => {
-    let [showApp, setShowToggle] = useState(false);
-    let [showItemCreator, setShowItemCreator] = useState(false);
-    let toggle = () => {
-        let toggle = !showItemCreator;
-        setShowItemCreator(toggle)
-    };
-    let tasks = localStorage.getItem('tasks');
-    let [todo, setTodo] = useState( tasks ? [...JSON.parse(tasks)] : []);
-    const addTask = (task) => {
-        setTodo([...todo, task]);
-    };
-
+    const [showApp, setShowToggle] = useState(false);
+    const [showItemCreator, setShowItemCreator] = useState(false);
+    const [todo, setTodo] = useState(() => {
+        const tasks = localStorage.getItem('tasks');
+        return tasks ? [...JSON.parse(tasks)] : []
+    });
 
     useEffect(() => {
         setShowToggle(true)
@@ -23,26 +17,29 @@ const App = () => {
     useEffect(() => {
         localStorage.setItem('tasks', JSON.stringify(todo));
     }, [todo]);
-    let deleteTask = (id) => {
+
+
+    const toggle = () => {
+        let toggle = !showItemCreator;
+        setShowItemCreator(toggle)
+    };
+    const addTask = (task) => {
+        setTodo([...todo, task]);
+    };
+    const removeTask = (id) => {
         setTodo(todo.filter(task => task.id !== id));
     };
 
-    return <div className={css.appWrapper}>
-        <div className={css.appWrapperContent}>
-            <div className={showApp ? css.name : css.hideName}>
-                <h1>Todo list</h1>
-            </div>
-            <div className={showApp ? css.list : css.hideList}>
-                <ul className={css.items}>
-                    {
-                        todo.length ? todo.map((task, index) => <ListItem key={index} todo={task}
-                                                                       deleteTask={deleteTask}/>) : "No tasks"}
-                </ul>
-                <TaskCreator showItemCreator={showItemCreator} toggle={toggle} addTask={addTask}
-                             todo={todo}/>
-                <button className={showApp ? css.button : css.hideButton} onClick={toggle} tabIndex={0}>+</button>
-            </div>
-        </div>
+
+    return <div className={css.appWrapperContent}>
+        <header className={showApp ? css.title : css.hideTitle}>
+            Todo list
+        </header>
+        <main className={showApp ? css.list : css.hideList}>
+            <List todo={todo} removeTask={removeTask} showApp={showApp} toggle={toggle}/>
+            <TaskCreator showItemCreator={showItemCreator} showApp={showApp} toggle={toggle} addTask={addTask}
+                         todo={todo}/>
+        </main>
     </div>
 };
 export default App;

@@ -1,15 +1,3 @@
-.appWrapper {
-  height: 100vh;
-  width: 100vw;
-  background: #91b9d6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.night{
-  background-color: #373434;
-}
 .appWrapperContent {
   height: 80%;
   width: 25%;
@@ -19,7 +7,7 @@
   justify-content: center;
 }
 
-.name {
+.title {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +23,7 @@
   color 0.2s ease-in-out 1s;
 }
 
-.hideName {
+.hideTitle {
   color: transparent;
   width: 0;
 }
@@ -63,6 +51,7 @@
   margin: 15px 10px 0 0;
   height: 95%;
   overflow-y: scroll;
+  overflow-x: hidden;
 
 }
 
@@ -78,43 +67,22 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 15px;
-  background-color: #9C89B8;
+  background-color: #b2c375;
 }
 
-.button {
-  color: #F0E6EF;
-  font-size: 60px;
-  text-align: center;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.noTask{
+  transition: all 0.2s ease-in-out 2.5s;
+  height: 93%;
   justify-content: center;
-  width: 75px;
-  height: 50px;
-  bottom: 20px;
-  right: 50px;
-  border-radius: 50px;
-  border: 3px solid #848484;
-  background: #848484;
-  z-index: 5;
-  transition: all 0.2s ease-in-out 2s, background-color 0.2s ease-in-out, color 0.2s ease-in-out, font-weight 0.2s ease-in-out;
+  display: flex;
+  color: #707070;
+  align-items: center;
+  font-size: 44px;
+  opacity: 1;
 }
-
-
-
-.button:active {
-  color: #fb6c6c;
-  font-weight: bold;
-  background-color: #F0E6EF;
-}
-
-.hideButton {
+.hideNoTask{
   opacity: 0;
-  width: 0;
-  height: 0;
 }
-
 @media (min-width: 2200px) {
   .appWrapperContent {
     height: 90%;
@@ -177,7 +145,9 @@
 @media (max-width: 350px) {
   .appWrapperContent {
     width: 95%;
-    height: 100%;
+    height: 90%;
   }
-
+  .title{
+    height: 12%;
+  }
 }
