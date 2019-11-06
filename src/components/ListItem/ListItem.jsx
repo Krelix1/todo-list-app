@@ -10,13 +10,16 @@ const ListItem = ({todo, ...props}) => {
         setShowToggle(toggle)
     };
     let taskPreview = todo.task.slice(0, 10) + "...";
+    let remove=(id)=>{
+        (window.confirm('Are you sure?') && props.removeTask(id))
+    }
     return <>
         <div className={css.list}>
-            <div className={css.icon} onClick={() => (window.confirm('Are you sure?') && props.removeTask(todo.id))}>
+            <div className={css.icon} tabIndex={0} onKeyPress={() => remove(todo.id)} onClick={() => remove(todo.id) }>
                 <FontAwesomeIcon icon={faTrashAlt}/>
             </div>
             {todo.date && <p className={css.date}>{todo.date}</p>}
-            <p className={css.task} onClick={toggle} tabIndex={0}>{taskPreview}</p>
+            <p className={css.task} onClick={toggle} onKeyPress={toggle} tabIndex={0}>{taskPreview}</p>
         </div>
         <section className={show ? css.information : css.hidden}>
             <p>{todo.task}</p>

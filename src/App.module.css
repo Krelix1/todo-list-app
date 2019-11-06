@@ -15,7 +15,7 @@
   width: 100%;
   background-color: #b2c375;
   margin-bottom: 3%;
-  box-shadow: 0 4px 6px #828282;
+  box-shadow: 0 4px 6px #8282828c;
   font-size: 30px;
   color: #F0E6EF;
   letter-spacing: 4px;
@@ -28,13 +28,12 @@
   width: 0;
 }
 
-
 .list {
   position: relative;
   padding-bottom: 85px;
   height: 80%;
   width: 100%;
-  box-shadow: 0 4px 6px #828282;
+  box-shadow: 0 4px 6px rgba(130, 130, 130, 0.62);
   background-color: #F0E6EF;
   transition: height 1s ease-in-out 1.4s,
   padding-bottom 0.2s ease-in-out 2.2s,
