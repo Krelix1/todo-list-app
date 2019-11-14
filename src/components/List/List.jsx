@@ -4,7 +4,7 @@ import ListItem from "../ListItem/ListItem";
 
 const List = ({todo, toggle, ...props}) => {
     return <div className={css.items}>
-        {todo.length ? todo.map((task, index) => <ListItem key={index} todo={task} removeTask={props.removeTask}/>) : <p className={props.showApp?css.noTask:css.hideNoTask}>No task</p>}
+        {todo.length ? todo.map((task, index) => <ListItem key={index} todo={task} darkTheme={props.darkTheme} removeTask={props.removeTask}/>) : <p className={props.showApp?css.noTask:css.hideNoTask}>No task</p>}
     </div>
 };
 

@@ -11,9 +11,4 @@ body {
 #root {
   height: 100vh;
   width: 100vw;
-  background: #91b9d6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }

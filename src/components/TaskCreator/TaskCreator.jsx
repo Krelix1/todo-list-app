@@ -17,8 +17,13 @@ let TaskCreator = ({showItemCreator, toggle, ...props}) => {
             toggle();
         }
     };
+
+    let classNames={
+        itemCreator: showItemCreator ? props.darkTheme?  css.itemCreator_dark : css.itemCreator_light : css.hideItemCreator,
+        button: props.showApp ? css.button : css.hideButton
+    };
     return <>
-        <div className={showItemCreator ? css.itemCreator : css.hideItemCreator}>
+        <div className={classNames.itemCreator}>
         <textarea cols="30" rows="10" className={css.inputText} onChange={(e) => setTask(e.target.value)}
                   placeholder={"Write some task"} value={task} tabIndex={0}/>
             <div className={css.inputDate}>
@@ -31,7 +36,6 @@ let TaskCreator = ({showItemCreator, toggle, ...props}) => {
             </div>
             <button className={css.taskButton} onClick={submit}  tabIndex={0}>Add task</button>
         </div>
-        <button className={props.showApp ? css.button : css.hideButton} onClick={toggle} tabIndex={0}>+</button>
     </>
 };
 

@@ -21,11 +21,17 @@
   justify-content: space-between;
   align-items: flex-end;
   height: 90px;
-  border-bottom: 2px solid #b2c375;
   width: 90%;
   margin: 0 auto;
 }
-
+.list_light{
+  composes: list;
+  border-bottom: 2px solid #b2c375;
+}
+.list_dark{
+  composes: list;
+  border-bottom: 2px solid #f57676;
+}
 .task {
   cursor: pointer;
   text-align: left;
@@ -40,18 +46,29 @@
   font-family: "Montserrat Regular", sans-serif;
   transition:all 0.5s ease-in-out, font-weight 0.1s ease-in-out;
 }
-
-.task:hover, .task:focus {
-  font-weight: bold;
+.task_light{
+  composes: task;
+  color: #707070;
+}
+.task_dark{
+  composes: task;
+  font-family: "Montserrat Light", sans-serif;
+  color:white;
 }
 
 .icon {
   cursor: pointer;
   padding: 20px 20px 15px 10px;
   font-size: 20px;
+}
+.icon_dark{
+  composes: icon;
+  color: #f57676;
+}
+.icon_light{
+  composes: icon;
   color: #848484;
 }
-
 .icon:hover ~ .task:after,
 .icon:focus ~ .task:after {
   width: 45%;
@@ -61,13 +78,20 @@
   margin: 20px auto 0;
   padding: 20px;
   font-size: 18px;
-  background-color: #b2c375;
   text-align: left;
   transition: all 0.3s ease-in-out;
   opacity: 1;
   height: auto;
   width: 90%;
   color: white;
+}
+.information_dark{
+  composes: information;
+  background-color: #f57676;
+}
+.information_light{
+  composes: information;
+  background-color: #b2c375;
 }
 
 .information p {
@@ -88,7 +112,6 @@
   font-size: 20px;
   font-family: "Montserrat Medium", sans-serif;
   transition: all 0.3s ease-in-out;
-  background-color: #b2c375;
   height: auto;
   color: #f0e6ef;
   width: auto;
@@ -96,17 +119,33 @@
   margin: 0 auto 15px;
   border-radius: 15px;
 }
+.date_light{
+  composes: date;
+  background-color: #b2c375;
+}
+.date_dark{
+  composes: date;
+  background-color: #f57676;
+}
 
 .time {
   font-size: 20px;
   font-family: "Montserrat Medium", sans-serif;
-  background-color: #f0e6ef;
   height: auto;
-  color: #b2c375;
   width: 80px;
   padding: 10px;
   margin-top: 10px;
   border-radius: 15px;
+}
+.time_light{
+  composes: time;
+  background-color: #f0e6ef;
+  color: #b2c375;
+}
+.time_dark{
+  composes: time;
+  background-color: #222222;
+  color: white;
 }
 
 @media (max-width: 610px) {
